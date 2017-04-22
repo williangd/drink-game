@@ -17,16 +17,17 @@ body {
 }
 
 .option {
-  width: 28%;
-  margin: 1% auto;
   transition: background 0.4s;
 }
 
 .option, #roll {
-  padding: 3% 0;
   min-width: 150px;
   border-radius: 5px;
   text-align: center;
+  height: 50px;
+  line-height: 50px;
+  width: 30%;
+  margin: 5px auto;
 }
 
 .option:nth-child(odd) {
@@ -38,8 +39,7 @@ body {
 }
 
 #roll {
-  width: 30%;
-  margin: 5% auto;
+  margin: 15px auto;
   background-color: red;
   text-decoration: none;
 	display: block;
@@ -61,4 +61,11 @@ h1 {
   padding: 20px 0;
   font-weight: normal;
   min-width: 150px;
+}
+
+@media (max-height: 520px) {
+  .option, #roll {
+    height: 40px;
+    line-height: 40px;
+  }
 }
