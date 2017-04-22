@@ -1,0 +1,58 @@
+.container {
+  max-width: 800px;
+  margin: auto;
+}
+
+body {
+  background-color: #eee;
+  color: white;
+  margin: 0;
+  font-family: "Avenir", "Montserrat", sans-serif;
+}
+
+.option {
+  width: 30%;
+  margin: 1.66%;
+  float: left;
+  padding: 5% 0;
+  text-align: center;
+  border-radius: 10px;
+  min-width: 100px;
+  transition: background 0.4s;
+}
+
+.option:nth-child(odd) {
+  background-color: steelblue;
+}
+
+.option:nth-child(even) {
+  background-color: #232323;
+}
+
+#roll {
+  width: 30%;
+  margin: auto;
+  text-align: center;
+  border-radius: 10px;
+  min-width: 150px;
+  clear: both;
+  padding: 5% 0;
+  background-color: red;
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
+
+#selected {
+  background-color: red;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  background-color: steelblue;
+  margin: 0;
+  text-transform: uppercase;
+  line-height: 1.1;
+  padding: 20px 0;
+  font-weight: normal;
+}
