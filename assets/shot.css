@@ -10,15 +10,23 @@ body {
   font-family: "Avenir", "Montserrat", sans-serif;
 }
 
+.options {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
 .option {
-  width: 30%;
-  margin: 1.66%;
-  float: left;
-  padding: 5% 0;
-  text-align: center;
-  border-radius: 10px;
-  min-width: 100px;
+  width: 28%;
+  margin: 1% auto;
   transition: background 0.4s;
+}
+
+.option, #roll {
+  padding: 3% 0;
+  min-width: 150px;
+  border-radius: 5px;
+  text-align: center;
 }
 
 .option:nth-child(odd) {
@@ -31,16 +39,13 @@ body {
 
 #roll {
   width: 30%;
-  margin: auto;
-  text-align: center;
-  border-radius: 10px;
-  min-width: 150px;
-  clear: both;
-  padding: 5% 0;
+  margin: 5% auto;
   background-color: red;
-  margin-bottom: 5%;
-  margin-top: 5%;
+  text-decoration: none;
+	display: block;
+  color: white;
 }
+
 
 #selected {
   background-color: red;
@@ -55,4 +60,5 @@ h1 {
   line-height: 1.1;
   padding: 20px 0;
   font-weight: normal;
+  min-width: 150px;
 }
