@@ -10,7 +10,6 @@ rollButton.addEventListener("click", function() {
 
   var times = random(5);
   var repeater = setInterval(function() {
-    console.log(times);
     optionPicked = mark();
     setTimeout(dismark, 500, optionPicked);
     times--;
