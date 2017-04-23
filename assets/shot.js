@@ -4,6 +4,8 @@ var optionPicked;
 
 
 rollButton.addEventListener("click", function() {
+  rollButton.setAttribute("disabled", "true");
+  rollButton.style.backgroundColor = "pink";
   for(var i = 0; i < options.length; i++) {
     options[i].removeAttribute("id", "selected");
   }
@@ -16,6 +18,11 @@ rollButton.addEventListener("click", function() {
     if(times <= 0) {
       clearInterval(repeater);
       setTimeout(mark, 1000);
+      setTimeout(function() { 
+        rollButton.removeAttribute("disabled");
+        rollButton.style.backgroundColor = "red"; 
+      }, 1500);
+      
     }
   }, 1000);
 });

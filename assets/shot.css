@@ -7,17 +7,13 @@ body {
   background-color: #eee;
   color: white;
   margin: 0;
-  font-family: "Avenir", "Montserrat", sans-serif;
+  font-family: "Arial", sans-serif;
 }
 
-.options {
+.options, .main {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-}
-
-.option {
-  transition: background 0.4s;
 }
 
 .option, #roll {
@@ -28,6 +24,7 @@ body {
   line-height: 50px;
   width: 30%;
   margin: 5px auto;
+  transition: background 0.4s;
 }
 
 .option:nth-child(odd) {
@@ -41,9 +38,9 @@ body {
 #roll {
   margin: 15px auto;
   background-color: red;
-  text-decoration: none;
-	display: block;
-  color: white;
+  color: inherit;
+  border: none;
+  font-size: inherit;
 }
 
 
@@ -67,5 +64,19 @@ h1 {
   .option, #roll {
     height: 40px;
     line-height: 40px;
+  }
+}
+
+@media (min-height: 600px) {
+  .option, #roll {
+    height: 60px;
+    line-height: 60px;
+  }
+}
+
+@media (min-height: 700px) {
+  .option, #roll {
+    height: 70px;
+    line-height: 70px;
   }
 }
