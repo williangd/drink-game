@@ -1,6 +1,22 @@
 var rollButton = document.getElementById("roll");
 var options = document.getElementsByClassName("option");
 var optionPicked;
+var lang;
+var langButtons = document.querySelectorAll('.lang button');
+var br = ['Beba', 'Dose dupla', 'Beba', 'Jogue novamente', 'Beba', 'Passe a vez', 
+          'Beba', 'Beba e jogue', 'Beba', 'Jogue novamente', 'Beba', 'Passe a vez' ];
+var en = ['Have a shot', 'Double shot', 'Have a shot', 'Play again', 'Have a shot', 'Miss a turn',
+          'Have a shot', 'Drink and play', 'Have a shot', 'Play again', 'Have a shot', 'Miss a turn']
+
+langButtons[0].addEventListener("click", function() {
+  setLanguague('en')
+})
+
+langButtons[1].addEventListener("click", function() {
+  setLanguague('br')
+});
+
+setLanguague('en')
 
 
 rollButton.addEventListener("click", function() {
@@ -43,3 +59,16 @@ function dismark(optionPicked) {
   optionPicked.removeAttribute("id", "selected");
 }
 
+function setLanguague(lang) {
+  if(lang === 'br') {
+    rollButton.textContent = 'Jogar';
+    for(var i = 0; i < options.length; i++) {
+      options[i].textContent = br[i];
+    }
+  } else {
+    rollButton.textContent = 'Play';
+    for(var i = 0; i < options.length; i++) {
+      options[i].textContent = en[i];
+    }
+  }
+}
