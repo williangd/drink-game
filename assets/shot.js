@@ -49,7 +49,7 @@ function random(limit) {
 
 function mark(optionPicked) {
   var num = random(13);
-  num === 0 ? num = num : num--;
+  num = num === 0 ? num : num - 1;
   optionPicked = options[num];
   optionPicked.setAttribute("id", "selected");
   return optionPicked;
@@ -61,14 +61,15 @@ function dismark(optionPicked) {
 
 function setLanguague(lang) {
   if(lang === 'br') {
-    rollButton.textContent = 'Jogar';
-    for(var i = 0; i < options.length; i++) {
-      options[i].textContent = br[i];
-    }
+    setText('Jogar', br);
   } else {
-    rollButton.textContent = 'Play';
-    for(var i = 0; i < options.length; i++) {
-      options[i].textContent = en[i];
-    }
+    setText('Play', en);
   }
 }
+
+function setText(buttonText, lang) {
+  rollButton.textContent = buttonText;
+  for(var i = 0; i < options.length; i++) {
+    options[i].textContent = lang[i];
+  }
+} 
