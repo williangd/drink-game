@@ -1,8 +1,9 @@
-var rollButton = document.getElementById('roll');
-var options = document.getElementsByClassName('option');
-var optionPicked;
-var langButtons = document.querySelectorAll('.lang button');
-var br = [
+const rollButton = document.getElementById('roll');
+const options = document.getElementsByClassName('option');
+let optionPicked;
+const langButtons = document.querySelectorAll('.lang button');
+const h1 = document.querySelector('h1');
+const br = [
   'Beba',
   'Dose dupla',
   'Beba',
@@ -16,7 +17,7 @@ var br = [
   'Beba',
   'Passe a vez'
 ];
-var en = [
+const en = [
   'Have a shot',
   'Double shot',
   'Have a shot',
@@ -31,24 +32,23 @@ var en = [
   'Miss a turn'
 ];
 
-langButtons[0].addEventListener('click', function() {
-  setLanguague('en');
-});
+langButtons[0].addEventListener('click', () => setLanguague('en'));
 
-langButtons[1].addEventListener('click', function() {
-  setLanguague('br');
-});
+langButtons[1].addEventListener('click', () => setLanguague('br'));
 
 setLanguague('en');
 
-rollButton.addEventListener('click', function() {
-  rollButton.setAttribute('disabled', 'true');
-  for (var i = 0; i < options.length; i++) {
-    options[i].removeAttribute('id', 'selected');
-  }
+h1.addEventListener('click', () => roll());
 
-  var times = random(5);
-  var repeater = setInterval(function() {
+rollButton.addEventListener('click', () => roll());
+
+function roll() {
+  rollButton.setAttribute('disabled', 'true');
+
+  Array.from(options).forEach(opt => opt.removeAttribute('id', 'selected'));
+
+  let times = random(6);
+  const repeater = setInterval(function() {
     optionPicked = mark();
     setTimeout(dismark, 500, optionPicked);
     times--;
@@ -56,7 +56,7 @@ rollButton.addEventListener('click', function() {
       endRoll(repeater);
     }
   }, 1000);
-});
+}
 
 function endRoll(repeater) {
   clearInterval(repeater);
@@ -71,7 +71,7 @@ function random(limit) {
 }
 
 function mark() {
-  var num = random(13);
+  let num = random(13);
   num = num === 0 ? num : num - 1;
   optionPicked = options[num];
   optionPicked.setAttribute('id', 'selected');
@@ -96,7 +96,5 @@ function setLanguague(lang) {
 
 function setText(buttonText, lang) {
   rollButton.textContent = buttonText;
-  for (var i = 0; i < options.length; i++) {
-    options[i].textContent = lang[i];
-  }
+  Array.from(options).forEach((opt, i) => (opt.textContent = lang[i]));
 }

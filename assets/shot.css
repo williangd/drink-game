@@ -106,25 +106,37 @@ h1 {
 }
 
 @media (max-height: 520px) {
-  .option,
-  #roll {
+  .option {
     height: 40px;
     line-height: 40px;
+  }
+
+  #roll {
+    height: 58px;
+    line-height: 58px;
   }
 }
 
 @media (min-height: 600px) {
-  .option,
+  .option {
+    height: 50px;
+    line-height: 50px;
+  }
+
   #roll {
-    height: 60px;
-    line-height: 60px;
+    height: 68px;
+    line-height: 68px;
   }
 }
 
 @media (min-height: 700px) {
-  .option,
+  .option {
+    height: 60px;
+    line-height: 60px;
+  }
+
   #roll {
-    height: 70px;
-    line-height: 70px;
+    height: 78px;
+    line-height: 78px;
   }
 }
